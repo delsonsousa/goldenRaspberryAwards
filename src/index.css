@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #151515;
+    font-size: 12px;
+}
+
+body,
+html,
+#root {
+    min-height: 100vh;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+a,
+button {
+    transition: 0.3s;
+    outline: none;
+}
+
+a:focus,
+a:hover,
+button:focus,
+button:hover {
+    opacity: 0.6;
+}
+
+a:disabled,
+button:disabled {
+    opacity: 0.4;
+}
+
+li {
+    list-style-type: none;
+}
