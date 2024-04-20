@@ -1,5 +1,6 @@
 import { InputMask, MaskEvent } from "@react-input/mask";
-import { Main, Table } from "../Dashboard/styled";
+import { Main } from "../Dashboard/styled";
+import { Table } from "../Table/styled";
 import { useEffect, useState } from "react";
 import { getMovieList } from "../../service/api";
 import { Navigate, useLocation, useSearchParams } from "react-router-dom";
@@ -64,7 +65,7 @@ export default function () {
       <div className="list">
         <Table>
           <tbody>
-            <tr>
+            <tr className="center">
               <th>ID</th>
               <th>
                 <div>

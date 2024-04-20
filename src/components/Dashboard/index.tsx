@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Box, Main, Table } from "./styled";
+import { Box, Main } from "./styled";
+import { Table } from "../Table/styled";
 import {
   getProducers,
   getStudios,
@@ -121,7 +122,7 @@ export default function () {
               <th>Producer</th>
               <th>Interval</th>
               <th>Previous Year</th>
-              <th>Follower Year</th>
+              <th>Following Year</th>
             </tr>
 
             {producers.max.map((p) => {
@@ -143,7 +144,7 @@ export default function () {
               <th>Producer</th>
               <th>Interval</th>
               <th>Previous Year</th>
-              <th>Follower Year</th>
+              <th>Following Year</th>
             </tr>
 
             {producers.min.map((p) => {
