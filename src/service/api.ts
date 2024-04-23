@@ -16,8 +16,9 @@ export async function getProducers() {
   return api.get("?projection=max-min-win-interval-for-producers");
 }
 
-export async function getWinner(year: string | undefined) {
-  return api.get(`?winner=true&year=${year}`);
+export async function getWinner(year: string | undefined = undefined) {
+  const yearParam = year ? `&year=${year}` : "";
+  return api.get(`?winner=true${yearParam}`);
 }
 
 export async function getMovieList(
@@ -25,11 +26,10 @@ export async function getMovieList(
   year: string | null = null,
   page: string | null = "1"
 ) {
+  const winnerParam = winner !== null ? `&winner=${winner}` : "";
+  const yearParam = year !== null ? `&year=${year}` : "";
   const pageParam = page === null ? 0 : Number(page) - 1;
-  let params = `?page=${pageParam}&size=10`;
-
-  if (winner !== null) params += `&winner=${winner}`;
-  if (year !== null) params += `&year=${year}`;
+  const params = `?page=${pageParam}&size=10${winnerParam}${yearParam}`;
 
   return api.get(params);
 }

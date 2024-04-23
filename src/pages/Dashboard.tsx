@@ -121,16 +121,14 @@ export default function () {
               <th>Following Year</th>
             </tr>
 
-            {producers.max.map((p) => {
-              return (
-                <tr key={p.producer}>
-                  <td>{p.producer}</td>
-                  <td>{p.interval}</td>
-                  <td>{p.previousWin}</td>
-                  <td>{p.followingWin}</td>
-                </tr>
-              );
-            })}
+            {producers.max.map((p) => (
+              <tr key={p.producer}>
+                <td>{p.producer}</td>
+                <td>{p.interval}</td>
+                <td>{p.previousWin}</td>
+                <td>{p.followingWin}</td>
+              </tr>
+            ))}
           </tbody>
         </Table>
         <h4>Minimum</h4>
@@ -143,22 +141,20 @@ export default function () {
               <th>Following Year</th>
             </tr>
 
-            {producers.min.map((p) => {
-              return (
-                <tr key={p.producer}>
-                  <td>{p.producer}</td>
-                  <td>{p.interval}</td>
-                  <td>{p.previousWin}</td>
-                  <td>{p.followingWin}</td>
-                </tr>
-              );
-            })}
+            {producers.min.map((p) => (
+              <tr key={p.producer}>
+                <td>{p.producer}</td>
+                <td>{p.interval}</td>
+                <td>{p.previousWin}</td>
+                <td>{p.followingWin}</td>
+              </tr>
+            ))}
           </tbody>
         </Table>
       </Box>
       <Box>
         <h3>List movies winners by year</h3>
-        <form onSubmit={handleSubmit}>
+        <form data-testid="search-form" onSubmit={handleSubmit}>
           <Search onMask={handleMask} />
         </form>
         <Table>
@@ -169,15 +165,13 @@ export default function () {
               <th>Title</th>
             </tr>
 
-            {winner.map((w) => {
-              return (
-                <tr key={`${w.id}-${w.title}`}>
-                  <td>{w.id}</td>
-                  <td>{w.year}</td>
-                  <td>{w.title}</td>
-                </tr>
-              );
-            })}
+            {winner.map((w) => (
+              <tr key={`${w.id}-${w.title}`}>
+                <td>{w.id}</td>
+                <td>{w.year}</td>
+                <td>{w.title}</td>
+              </tr>
+            ))}
           </tbody>
         </Table>
       </Box>

@@ -78,6 +78,7 @@ export default function () {
                     type="text"
                     onMask={handleYearMask}
                     defaultValue={searchParams.get("year")?.toString()}
+                    data-testid="year-input"
                   />
                 </div>
               </th>
@@ -90,6 +91,7 @@ export default function () {
                     name="winner"
                     onChange={handleWinnerChange}
                     defaultValue={searchParams.get("winner")?.toString()}
+                    data-testid="winner"
                   >
                     <option value="null">Yes/No</option>
                     <option value="true">Yes</option>
